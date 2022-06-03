@@ -26,7 +26,7 @@ export class PassagemAereaService {
     return this.httpClient
     .get<IVoo[]>(`${API_PATH}passagens/busca/?ida_e_volta=${ida_e_volta}&origem=${origem}&destino=${destino}&data_ida=${data_ida}&data_volta=${data_volta}&quant_pessoas=${quant_pessoas}`).toPromise()}
   
-    compra_passagem(quant_pessoas: number, 
+  finalizarCompra(quant_pessoas: number, 
                 dados_pessoas: [], 
                 id_voo: number, 
                 nome_cartao: string, 
@@ -34,8 +34,14 @@ export class PassagemAereaService {
                 crv: number, 
                 parcelas: number, 
                 venc_cartao: string) {
-    return this.httpClient.post<ICompra>(`${API_PATH}passagens/compra`, {quant_pessoas,  dados_pessoas, 
+    return this.httpClient.post<ICompra>(`${API_PATH}passagens/finalizar-compra`, {quant_pessoas,  dados_pessoas, 
                                                                 id_voo, nome_cartao, num_cartao,  crv, 
                                                                 parcelas, venc_cartao}).toPromise();
   }
+  
+    getInfoVoo(id_ida: number, id_volta: number, quant_pessoas: number): Promise<any> {
+        return this.httpClient
+          .get<any>(`${API_PATH}passagens/compra/?id_ida=${id_ida}&id_volta=${id_volta}&quant_pessoas=${quant_pessoas}`)
+          .toPromise();
+    }                                                          
 }

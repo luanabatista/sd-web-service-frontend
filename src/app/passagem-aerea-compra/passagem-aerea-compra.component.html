@@ -1,8 +1,8 @@
 
   <mat-vertical-stepper [linear]="false" #stepper>
-    <mat-step [stepControl]="firstFormGroup" ngFor let-item [ngForOf]="quant_pessoas">
+    <mat-step [stepControl]="firstFormGroup">
       <!-- para cada passageiro renderizar um form de dados pessoais -->
-        <form class="example-container">
+        <form class="example-container" *ngFor="let p of dados_pessoas">
             <ng-template matStepLabel>Dados Pessoais</ng-template>
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Nome</mat-label>
@@ -16,10 +16,10 @@
                 <mat-label>idade</mat-label>
                 <input matInput>
             </mat-form-field>
-            <div>
-                <button mat-button matStepperNext>Avançar</button>
-            </div>
         </form>
+        <div>
+            <button mat-button matStepperNext>Avançar</button>
+        </div>
     </mat-step>
     <mat-step [stepControl]="secondFormGroup">
         <form class="example-container">
@@ -40,6 +40,7 @@
                 <mat-label>Parcelas</mat-label>
                 <input matInput>
             </mat-form-field>
+            
             <div>
                 <button mat-button matStepperPrevious>Voltar</button>
                 <button mat-button (click)="stepper.reset()" id="finalizar">Confirmar Compra</button>

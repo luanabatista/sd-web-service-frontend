@@ -8,7 +8,7 @@
 
     <mat-form-field appearance="fill" id="quant_pessoas">
       <mat-label>Passageiros</mat-label>
-      <mat-select [formControl]="quant_pessoas" >
+      <mat-select [formControl]="quant_pessoas" ng-model="quant_pessoas">
         <mat-option value=1>1</mat-option>
         <mat-option value=2>2</mat-option>
         <mat-option value=3>3</mat-option>
@@ -46,16 +46,15 @@
       <button mat-flat-button (click)="buscaVoos()">Procurar</button>
 </form>
 
-<mat-form-field class="example-full-width" id="id_ida" ng-model="id_ida" appearance="fill">
+<mat-form-field class="example-full-width" id="id_ida" appearance="fill">
   <mat-label>Id voo de ida</mat-label>
-  <input matInput>
+  <input matInput name="id_ida" [(ngModel)]="id_ida">
 </mat-form-field>
 
-<mat-form-field class="example-full-width" id="id_volta" ng-model="id_volta" appearance="fill">
+<mat-form-field class="example-full-width" id="id_volta" appearance="fill">
   <mat-label>Id voo de volta</mat-label>
-  <input matInput>
+  <input matInput name="id_volta" [(ngModel)]="id_volta">
 </mat-form-field>
 <br>
-<a mat-flat-button href="/passagens/compra">Comprar</a>
-
+<button mat-flat-button (click)="goCompra()" >Comprar</button>
 

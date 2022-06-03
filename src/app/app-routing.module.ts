@@ -7,10 +7,10 @@ import { PassagemAereaCompraComponent } from './passagem-aerea-compra/passagem-a
 
 
 const routes: Routes = [
-  { path: 'passagens', component: PassagemAereaComponent },
+  { path: 'passagens/busca', component: PassagemAereaComponent },
   { path: 'passagens/compra', component: PassagemAereaCompraComponent },
   { path: 'hospedagens', component: HospedagemComponent },
-  { path: '', redirectTo: 'passagens', pathMatch: 'full' },
+  { path: '', redirectTo: 'passagens/busca', pathMatch: 'full' },
   //{ path: '**', component: PageNotFoundComponent },
 ];
 

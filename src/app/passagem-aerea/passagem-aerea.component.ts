@@ -19,8 +19,8 @@ import { API_PATH } from 'src/environments/environment';
 })
 export class PassagemAereaComponent implements OnInit {
 
-  id_ida: any;
-  id_volta: any;
+  public id_ida: any;
+  public id_volta: any;
 
   options: FormGroup;
   ida_e_volta = new FormControl('true');
@@ -82,12 +82,14 @@ export class PassagemAereaComponent implements OnInit {
     console.log(data_ida_formatada)
     
     this.passagemAereaService.buscaVoo(this.ida_e_volta.value, this.origem.value, this.destino.value, data_ida_formatada, data_volta_formatada, this.quant_pessoas.value)
-    .then(result => this.tableContent = [result])
+    .then(result => console.log(result))
     .catch(error => console.error(error))
   }
 
-  
-
   ngOnInit(): void {
+  }
+  
+  goCompra() {
+    this.router.navigate(['passagens/compra'], { queryParams: { id_ida: this.id_ida, 'id_volta': this.id_volta, 'quant_pessoas': this.quant_pessoas.value }});
   }
 }
