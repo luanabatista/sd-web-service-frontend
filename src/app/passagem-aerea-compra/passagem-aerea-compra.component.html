@@ -1,0 +1,49 @@
+
+  <mat-vertical-stepper [linear]="false" #stepper>
+    <mat-step [stepControl]="firstFormGroup" ngFor let-item [ngForOf]="quant_pessoas">
+      <!-- para cada passageiro renderizar um form de dados pessoais -->
+        <form class="example-container">
+            <ng-template matStepLabel>Dados Pessoais</ng-template>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Número</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>idade</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext>Avançar</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form class="example-container">
+            <ng-template matStepLabel>Dados de Pagamento</ng-template>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Número do cartão</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>CRV</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Vencimento</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Parcelas</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperPrevious>Voltar</button>
+                <button mat-button (click)="stepper.reset()" id="finalizar">Confirmar Compra</button>
+            </div>
+        </form>
+    </mat-step>
+  </mat-vertical-stepper>

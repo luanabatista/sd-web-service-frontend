@@ -1,0 +1,86 @@
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+
+.mat-flat-button {
+    margin-left: 0px;
+    padding: 8px 60px;
+    background-color: #3c9dff;
+    color: white;
+}
+
+#id_ida {
+  margin-right: 8px;
+  margin-top: 64px;
+}
+
+#id_volta {
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+#ida_e_volta {
+  width: 150px;
+}
+
+#quant_pessoas {
+  width: 120px;
+}
+
+.example-form-field {
+  margin-top: 50px;
+  margin-right: 8px;
+}
+
+table {
+    margin-top: 30px;
+    background-color: rgb(243, 243, 243);
+    width: 100%;
+  }
+  
+  tr.example-detail-row {
+    height: 0;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):hover {
+    background: #bedfff;
+  }
+  
+  tr.example-element-row:not(.example-expanded-row):active {
+    background: rgb(224, 224, 224);
+  }
+  
+  .example-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .example-element-detail {
+    overflow: hidden;
+    display: flex;
+    border-radius: 8px;
+    background-color: #bedfff;
+  }
+  
+  .example-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0 8px 20px;
+    height: 104px;
+  }
+  
+  .example-element-symbol {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+  
+  .example-element-description {
+    padding: 16px;
+  }
+  
+  .example-element-description-attribution {
+    opacity: 0.5;
+  }
+  

@@ -1,0 +1,61 @@
+<form class="example-container" [formGroup]="options">
+    <mat-form-field appearance="fill" id="ida_e_volta">
+      <mat-select [formControl]="ida_e_volta" >
+        <mat-option value=true>Ida e volta</mat-option>
+        <mat-option value=false>Somente ida</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" id="quant_pessoas">
+      <mat-label>Passageiros</mat-label>
+      <mat-select [formControl]="quant_pessoas" >
+        <mat-option value=1>1</mat-option>
+        <mat-option value=2>2</mat-option>
+        <mat-option value=3>3</mat-option>
+        <mat-option value=4>4</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" id="origem">
+        <mat-label>Selecione uma origem</mat-label>
+        <mat-select [formControl]="origem">
+          <mat-option value="MAB">Marabá, MAB - Brasil</mat-option>
+          <mat-option value="BSB">Brasília, BSB - Brasil</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" id="destino">
+        <mat-label>Selecione um destino</mat-label>
+        <mat-select [formControl]="destino">
+          <mat-option value="MAB">Marabá, MAB - Brasil</mat-option>
+          <mat-option value="BSB">Brasília, BSB - Brasil</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" id="datas">
+      <mat-label>Datas de ida e volta</mat-label>
+      <mat-date-range-input  [rangePicker]="picker">
+        <input matStartDate formControlName="ida" placeholder="Data de ida">
+        <input matEndDate formControlName="volta" placeholder="Data de volta">
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+      
+      <button mat-flat-button (click)="buscaVoos()">Procurar</button>
+</form>
+
+<mat-form-field class="example-full-width" id="id_ida" ng-model="id_ida" appearance="fill">
+  <mat-label>Id voo de ida</mat-label>
+  <input matInput>
+</mat-form-field>
+
+<mat-form-field class="example-full-width" id="id_volta" ng-model="id_volta" appearance="fill">
+  <mat-label>Id voo de volta</mat-label>
+  <input matInput>
+</mat-form-field>
+<br>
+<a mat-flat-button href="/passagens/compra">Comprar</a>
+
+

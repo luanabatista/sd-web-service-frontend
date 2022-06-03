@@ -1,0 +1,14 @@
+.mat-form-field {
+    margin-top: 32px;
+    margin-right: 8px;
+}
+
+.mat-button {
+    margin-right: 8px;
+    background-color: #3c9dff;
+    color: white;
+}
+
+#finalizar {
+    background-color: #15ba12;
+}
