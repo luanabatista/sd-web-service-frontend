@@ -25,13 +25,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { PassagemAereaCompraComponent } from './passagem-aerea-compra/passagem-aerea-compra.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
+import { HospedagemCompraComponent } from './hospedagem-compra/hospedagem-compra.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PassagemAereaComponent,
     HospedagemComponent,
-    PassagemAereaCompraComponent
+    PassagemAereaCompraComponent,
+    HospedagemCompraComponent
   ],
   imports: [
     BrowserModule,

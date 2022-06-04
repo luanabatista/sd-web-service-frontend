@@ -1,5 +1,5 @@
 export interface IPessoa { 
     "nome": string, 
-    "idade": number,
+    "idade": string,
     "numero": string,
 }

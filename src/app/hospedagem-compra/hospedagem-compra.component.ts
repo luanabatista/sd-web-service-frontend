@@ -3,18 +3,17 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { IPessoa } from '../interfaces/IPessoa';
-import { PassagemAereaService } from '../passagem-aerea/passagem-aerea.service';
+import { HospedagemService } from '../hospedagem/hospedagem.service';
 
 
 @Component({
-  selector: 'app-passagem-aerea-compra',
-  templateUrl: './passagem-aerea-compra.component.html',
-  styleUrls: ['./passagem-aerea-compra.component.css']
+  selector: 'app-hospedagem-compra',
+  templateUrl: './hospedagem-compra.component.html',
+  styleUrls: ['./hospedagem-compra.component.css']
 })
-export class PassagemAereaCompraComponent implements OnInit {
-
-  public id_ida: any;
-  public id_volta: any;
+export class HospedagemCompraComponent implements OnInit {
+  public id_hospedagem: any;
+  public num_quartos: any;
   public quant_pessoas: any;
   public valor_total: any;
   public dados_pessoas: Array<any>;
@@ -33,11 +32,11 @@ export class PassagemAereaCompraComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private route: ActivatedRoute,
-    private passagemAereaService: PassagemAereaService,
+    private hospedagemService: HospedagemService,
     private router: Router
     ) {
     this.getParams()
-    console.log(this.id_ida, this.id_volta, this.quant_pessoas)
+    console.log(this.id_hospedagem, this.num_quartos, this.quant_pessoas)
 
     this.compra()
     this.dados_pessoas = []
@@ -53,20 +52,20 @@ export class PassagemAereaCompraComponent implements OnInit {
 
   private getParams() {
     this.route.queryParams.subscribe(params => {
-      this.id_ida = params['id_ida'];
-      this.id_volta = params['id_volta'];
+      this.id_hospedagem = params['id_hospedagem'];
+      this.num_quartos = params['num_quartos'];
       this.quant_pessoas = params['quant_pessoas']
   });
   }
 
   private compra() {
     
-    this.passagemAereaService.getInfoVoo (this.id_ida, this.id_volta, this.quant_pessoas)
+    /*this.hospedagemService.getInfoHospedagem (this.id_hospedagem, this.num_quartos, this.quant_pessoas)
     .then(result => {
         this.valor_total = result;
         console.log(this.valor_total)
     })
-    .catch(error => console.error(error))
+    .catch(error => console.error(error))*/
   }
 
   public recebeDadosPessoas() {
@@ -74,8 +73,8 @@ export class PassagemAereaCompraComponent implements OnInit {
   }
 
   public finalizarCompra() {
-    console.log(this.passagemAereaService.finalizarCompra(this.quant_pessoas, this.dados_pessoas.toString(), this.id_ida, this.id_volta, 
-      this.nome_cartao, this.num_cartao, this.crv, this.parcelas, this.venc_cartao, this.valor_total.toString()))
+    /*console.log(this.hospedagemService.finalizarCompra(this.quant_pessoas, this.dados_pessoas.toString(), this.id_ida, this.id_volta, 
+      this.nome_cartao, this.num_cartao, this.crv, this.parcelas, this.venc_cartao, this.valor_total.toString()))*/
   }
   
 
