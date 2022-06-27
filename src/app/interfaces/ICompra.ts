@@ -1,12 +1,12 @@
 export interface ICompra { 
-    "id": number,
-    "valor": number,
+    "id": string,
+    "valor": string,
     "itens": [],
     "dados_cartao": {
         "nome": string,
         "numero": string,
-        "crv": number,
+        "crv": string,
         "vencimento": string
     },
-    "parcelas": number
+    "parcelas": string
 }
