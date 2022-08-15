@@ -1,4 +1,6 @@
-# SdTrab5Frontend
+# sd5-web-service-frontend
+
+Trabalho 5 da disciplina de Sistemas Distribuídos. Desenvolvimento do frontend de um web service.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
